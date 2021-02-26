@@ -50,6 +50,7 @@ int main (int argc, char *argv[]){
                 if (strcmp(person.name, argv[2]) == 0 ){
                     int num = atoi(argv[3]);
                     person.age = num;
+                    lseek(fd,-sizeof(struct person),SEEK_CUR);
                     if (write(fd, &person, sizeof(struct person))<= 0){
                         puts("Error in file update");
                         return -1;
