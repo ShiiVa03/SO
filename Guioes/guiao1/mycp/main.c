@@ -22,7 +22,7 @@ int main (int argc, char *argv[]){
         return -1;
     }
 
-    int fddest = open(argv[2],O_WRONLY | O_CREAT | O_TRUNC, 6666);
+    int fddest = open(argv[2],O_WRONLY | O_CREAT | O_TRUNC, 0666);
 
     char *buffer = malloc(100);
     ssize_t readbytes;
