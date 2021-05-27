@@ -9,7 +9,7 @@ int main(){
     int bytesread = 0;
     int fd = open("fifo",O_WRONLY);
 
-    while((bytesread = read(0, buffer, 4096)>0))
+    while((bytesread = read(0, buffer, 4096))>0)
         write(fd,buffer,bytesread);
     
     close(fd);
